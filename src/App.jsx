@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const App = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState([0, 0, 0]);
 
   const handleIncrement = () => {
     setCount(count + 1);
@@ -15,7 +15,9 @@ const App = () => {
     setCount(0);
   };
 
-  const handleAddCounter = () => {};
+  const handleAddCounter = () => {
+    setCount([...count, 0]);
+  };
 
   return (
     <div>
@@ -24,7 +26,7 @@ const App = () => {
       <button onClick={handleIncrement}>+</button>
       <button onClick={handleDecrement}>-</button>
       <button onClick={handleReset}>Reset</button>
-      {}
+      <button onClick={handleAddCounter}>Add Counter</button>
     </div>
   );
 };
